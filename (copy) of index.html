@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="(copy)_of_styles.css" />
 
     <title>NuCamp: A Better Way To Camp</title>
 </head>
@@ -30,68 +30,12 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="mt-4 col col-md-4 col-xl-2">
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#reserveModal">
-                        Reserve Campsite
-                    </button>
+                    <a class="btn btn-large btn-dark" href="#reserveForm" role="button" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
 
                 </div>
             </div>
         </div>
     </header>
-    <div id="reserveModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-info text-white">
-                    <h3 class="modal-title">Reserve a Campsite</h3>
-                    <button type="button" class="close" data-dismiss="modal">&times; </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                            <form id="reserveForm">
-                                <div class="row">
-                                    <label class="col-sm-6" for="numberOfCampers">Number of Campers</label>
-                                    <div class="col">
-                                        <select class="form-control" id="numCampers" name="numCampers">
-                                            <option>Select...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <label class="col-sm-6" for="date">Date</label>
-                                    <div class="col-sm-6">
-                                        <input class="form-control" type="date" id="date" name="date" placeholder="date">
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <label class="col-sm-6 col-form-label" for="campsiteType">Campsite Type</label>
-                                    <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-success active">
-                                            <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Tent
-                                          </label>
-                                          <label class="btn btn-info">
-                                            <input type="radio" name="siteType" id="siteRV" autocomplete="off"> RV
-                                          </label>
-
-                                    </div>
-                                </div>
-                                <div class="row form-group">
-                                    <div class="col">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-info">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
         <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
             <div class="container">
@@ -108,8 +52,7 @@
                     </ul>
                     <span class="navbar-text ml-auto">
                         <a role="button" data-toggle="modal" data-target="#loginModal">
-                            <i class="fa fa-sign-in"></i> Login
-                        </a>
+                        <button type="button" class="fa fa-sign-in fa-lg btn btn-dark"> LOG IN</a>
                     </span>
                 </div>
             </div>
@@ -240,7 +183,44 @@
             </div>
         </div>
     </div>
-    
+    <div class="row row-content">
+        <div class="col-sm-6 mx-auto">
+            <div class="card">
+                <h3 class="card-header text-light bg-info">Reserve a Campsite</h3>
+                <div class="card-body">
+                    <form id="reserveForm">
+                        <div class="row">
+                            <label class="col-sm-6" for="numberOfCampers">Number of Campers</label>
+                            <div class="col">
+                                <select class="form-control" id="numCampers" name="numCampers">
+                                    <option>Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-6" for="date">Date</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" type="date" id="date" name="date" placeholder="date">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                            <button type="button" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 </div>
     <footer class="site-footer">
         <div class="container">
@@ -276,6 +256,12 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"> </script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"> </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"> </script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </body>
 
