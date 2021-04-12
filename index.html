@@ -167,14 +167,14 @@
                         <img class="d-block w-100" src="img/breadcrumb-trail.jpg" alt="Breadcrumb Trail Campground" />
                         <div class="carousel-caption">
                             <h3> Breadcrumb Trail Campground </h3>
-                            <p class="d-none d-sm-block"> Let Nucamp be your guide tro this off-the-beaten-path, hike-in-only campground. </p>
+                            <p class="d-none d-sm-block"> Let Nucamp be your guide through this off-the-beaten-path, hike-in-only campground. </p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="img/react-lake.jpg" alt="React Lake Campground" />
                         <div class="carousel-caption">
                             <h3> React Lake Campground </h3>
-                            <p class="d-none d-sm-block"> Nestled in the foothills of the Chrome Mountains, thsi campground on the shores of the pristine React Lake is a favorite for fly fishers. </p>
+                            <p class="d-none d-sm-block"> Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers. </p>
                         </div>  
                     </div>
                     <div class="carousel-item">
@@ -193,6 +193,15 @@
                     <span class="carousel-control-next-icon"></span>
                     <span class="sr-only">Next</span>
                 </a>
+                <div class="btn-group" id="carouselButton">
+                    <button class="btn btn-danger btn-sm" id="carouselPause">
+                        <i class="fa fa-pause"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" id="carouselPlay" >
+                        <i class="fa fa-play"></i>
+                    </button>
+
+                </div>
             </div>
         </div>
     </div>
@@ -276,6 +285,18 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"> </script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"> </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"> </script>
+
+    <script>
+        $(function() {
+            $(".carousel").carousel( {interval: 4500, pause: "false"} );
+            $("#carouselPause").click(function(){
+                $(".carousel").carousel("pause");
+            });
+            $(".carouselPlay").click(function(){
+                $(".carousel").carousel("cycle");
+            });
+        });
+    </script>
 
 </body>
 
